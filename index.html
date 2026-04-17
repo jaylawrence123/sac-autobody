@@ -758,7 +758,7 @@
 
     /* Stacked editorial H1 */
     .hero-h1 {
-      margin: 0 0 1rem;
+      margin: 0 0 1.75rem;
       display: flex;
       flex-direction: column;
       line-height: 1.02;
@@ -769,12 +769,14 @@
       font-size: clamp(1.25rem, 3.5vw, 2.5rem);
       color: #666;
       display: block;
+      margin-bottom: 0.375rem;
     }
     .h1-bold {
       font-family: var(--font-display);
       font-size: clamp(2.5rem, 7vw, 5.25rem);
       color: #111;
       display: block;
+      margin-bottom: 0.25rem;
     }
     .h1-med {
       font-family: var(--font-display);
@@ -783,14 +785,28 @@
       display: block;
     }
     .h1-tag {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      margin-top: 1rem;
+    }
+    .h1-tag-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: clamp(0.625rem, 1.5vw, 0.8125rem);
+      font-size: clamp(0.75rem, 1.6vw, 0.9375rem);
       color: #555;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-top: 0.5rem;
-      display: block;
+    }
+    .h1-tag-item::before {
+      content: '\2713';
+      color: var(--sac-red);
+      font-size: 0.8em;
+      flex-shrink: 0;
+      line-height: 1;
     }
 
     .hero-subhead {
@@ -2121,7 +2137,11 @@
               <span class="h1-dim">Rapid City's</span>
               <span class="h1-bold">Independent</span>
               <span class="h1-med">Auto Body Shop.</span>
-              <span class="h1-tag">Owner-Operated &middot; Lifetime Guaranteed &middot; Since 2017</span>
+              <span class="h1-tag">
+                <span class="h1-tag-item">Owner-Operated</span>
+                <span class="h1-tag-item">Lifetime Guaranteed</span>
+                <span class="h1-tag-item">Since 2017</span>
+              </span>
             </h1>
             <p class="hero-subhead">Hail. Collision. Paint. Rust. RVs. Sean Reagan and his crew have been returning vehicles to pre-damage condition in Rapid City since 2017. Every repair guaranteed for as long as you own the vehicle.</p>
             <div class="hero-ctas">

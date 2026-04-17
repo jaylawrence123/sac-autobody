@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAC Auto Body — Independent Auto Body Shop in Rapid City, SD</title>
+  <meta name="description" content="Owner-operated auto body and paint shop in Rapid City, SD. Hail, collision, paint, rust, auto glass, and RV repair. Lifetime guaranteed. Call (605) 348-3458.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://[DOMAIN_TBD]/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SAC Auto Body — Rapid City's Independent Body Shop">
+  <meta property="og:description" content="Owner-operated auto body and paint shop. Lifetime guaranteed repairs. Works with any insurance company.">
+  <meta property="og:url" content="https://[DOMAIN_TBD]/">
+  <meta property="og:image" content="https://[DOMAIN_TBD]/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAC Auto Body — Rapid City, SD">
+  <meta name="twitter:description" content="Owner-operated auto body shop. Lifetime guaranteed repairs.">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Google Fonts — async load for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <style>
+    /* ============================================================
+       ⚠ PLACEHOLDERS — must be resolved before deploy:
+       - WEB3FORMS_ACCESS_KEY_HERE  → generate at web3forms.com against sacrapidcity@gmail.com
+       - [DOMAIN_TBD]               → canonical, OG, schema URLs
+       - Geo coordinates            → verify exact coords for 301 Cambell St
+       - Sean + Pickles photo       → replace .sean-photo-placeholder
+       - /favicon.svg               → generate from wordmark
+       - /og-image.jpg              → generate from hero
+    ============================================================ */
+
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --sac-red:        #C8102E;
+      --sac-red-dark:   #9A0C23;
+      --sac-ink:        #0E0E0E;
+      --sac-ink-soft:   #1F1F1F;
+      --sac-base:       #FAFAF8;
+      --sac-surface:    #EBEBEB;
+      --sac-steel:      #6B6B6B;
+      --sac-hairline:   #D4D4D4;
+
+      --sac-chrome: linear-gradient(
+        110deg,
+        #7a0a1a 0%,
+        #C8102E 18%,
+        #E8394F 34%,
+        #d4d4d4 44%,
+        #FFFFFF 50%,
+        #d4d4d4 56%,
+        #E8394F 66%,
+        #C8102E 82%,
+        #7a0a1a 100%
+      );
+
+      --sac-chrome-line: linear-gradient(
+        90deg,
+        transparent 0%,
+        #A8A8A8 20%,
+        #FFFFFF 50%,
+        #A8A8A8 80%,
+        transparent 100%
+      );
+
+      --font-display: 'Archivo Black', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --nav-h:        60px;
+      --bar-height:   36px;
+      --container-max: 1200px;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--sac-ink);
+      background: var(--sac-base);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    [id] { scroll-margin-top: calc(var(--bar-height) + var(--nav-h) + 16px); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ============================================================
+       SKIP LINK
+    ============================================================ */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      z-index: 9999;
+      background: var(--sac-red);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0 0 4px 4px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ============================================================
+       FOCUS
+    ============================================================ */
+    :focus-visible {
+      outline: 2px solid var(--sac-red);
+      outline-offset: 2px;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2 {
+      font-family: var(--font-display);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+    p  { font-size: clamp(1rem, 1.25vw, 1.0625rem); }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 768px) { .container { padding-inline: 2rem; } }
+
+    section { padding-block: 4rem; }
+    @media (min-width: 1024px) { section { padding-block: 6rem; } }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.01em;
+      padding: 0.875rem 1.75rem;
+      min-height: 44px;
+      min-width: 44px;
+      border: 2px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+
+    /* Red fill — light backgrounds */
+    .btn-primary {
+      background: var(--sac-red);
+      color: #fff;
+      border-color: var(--sac-red);
+    }
+    .btn-primary:hover,
+    .btn-primary:active {
+      background: var(--sac-red-dark);
+      border-color: var(--sac-red-dark);
+    }
+
+    /* Ghost — dark backgrounds (hero) */
+    .btn-ghost-light {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    .btn-ghost-light:hover,
+    .btn-ghost-light:active {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ============================================================
+       SECTION LABEL (eyebrow)
+    ============================================================ */
+    .section-label {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      color: var(--sac-red);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ============================================================
+       CHROME DIVIDER
+    ============================================================ */
+    .chrome-divider {
+      height: 2px;
+      background: var(--sac-chrome-line);
+      border: none;
+      margin: 0;
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 102;
+      height: var(--bar-height);
+      background: linear-gradient(
+        180deg,
+        #6e6e6e 0%,
+        #a8a8a8 12%,
+        #d8d8d8 28%,
+        #f5f5f5 44%,
+        #ffffff 50%,
+        #efefef 56%,
+        #cccccc 70%,
+        #a0a0a0 84%,
+        #7a7a7a 100%
+      );
+      box-shadow: 0 1px 0 rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .announcement-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 40s linear infinite;
+    }
+    .announcement-track:hover { animation-play-state: paused; }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .announcement-set {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .announcement-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      padding: 0 2rem;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .announcement-item--chrome {
+      color: var(--sac-red);
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .announcement-dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .announcement-track { animation: none; }
+      .announcement-item--chrome { animation: none; }
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .site-header {
+      position: fixed;
+      top: var(--bar-height);
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--sac-ink);
+      height: var(--nav-h);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 768px) { .nav-inner { padding-inline: 2rem; } }
+
+    /* Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    /* Desktop links */
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--sac-red);
+      transition: width 200ms ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: #fff; }
+
+    /* Nav controls */
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .nav-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: var(--sac-red);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      min-height: 44px;
+      white-space: nowrap;
+      transition: background 150ms ease;
+    }
+    .nav-phone:hover { background: var(--sac-red-dark); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.625rem;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    @media (min-width: 1024px) { .nav-hamburger { display: none; } }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 250ms ease, opacity 250ms ease;
+      transform-origin: center;
+      pointer-events: none;
+    }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile overlay */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: var(--sac-ink);
+      display: flex;
+      flex-direction: column;
+      padding: calc(var(--nav-h) + 2rem) 1.5rem 2rem;
+      transform: translateX(100%);
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    .nav-overlay.is-open { transform: translateX(0); }
+
+    .nav-overlay-links {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .nav-overlay-link {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+      color: #fff;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 150ms ease;
+    }
+    .nav-overlay-link:hover { color: var(--sac-red); }
+
+    .nav-overlay-cta {
+      margin-top: 2rem;
+    }
+    .nav-overlay-cta .btn-primary {
+      width: 100%;
+      font-size: 1.0625rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+
+    /* ============================================================
+       HERO — Midnight Steel
+    ============================================================ */
+    .hero {
+      /* Mouse-reactive metallic sheen — --mx/--my set by JS */
+      background:
+        radial-gradient(circle at var(--mx, 65%) var(--my, 22%), rgba(255,255,255,0.06) 0%, transparent 42%),
+        radial-gradient(ellipse 90% 55% at 8% 108%, rgba(200,16,46,0.24) 0%, transparent 62%),
+        linear-gradient(158deg, #0d0d0d 0%, #121212 50%, #080808 100%);
+      color: #fff;
+      padding-top: calc(var(--bar-height) + var(--nav-h) + 2.5rem);
+      padding-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: calc(var(--bar-height) + var(--nav-h) + 4rem);
+        padding-bottom: 4rem;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+      }
+    }
+    @supports not (min-height: 100dvh) {
+      @media (min-width: 768px) { .hero { min-height: 100vh; } }
+    }
+
+    /* Horizontal scanlines — industrial feel */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(255,255,255,0.014) 2px,
+        rgba(255,255,255,0.014) 3px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Diagonal panel-line texture */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -52deg,
+        transparent 0px,
+        transparent 72px,
+        rgba(255,255,255,0.016) 72px,
+        rgba(255,255,255,0.016) 73px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Animated ambient light orb */
+    .hero-bg-orb {
+      position: absolute;
+      width: 80vw;
+      height: 80vw;
+      max-width: 860px;
+      max-height: 860px;
+      background: radial-gradient(circle, rgba(255,255,255,0.042) 0%, transparent 62%);
+      top: -25%;
+      right: -18%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orb-drift 20s ease-in-out infinite alternate;
+    }
+    @keyframes orb-drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      35%  { transform: translate(-10vw, 10vh) scale(1.12); }
+      70%  { transform: translate(-4vw, 20vh) scale(0.88); }
+      100% { transform: translate(6vw, -4vh) scale(1.06); }
+    }
+
+    /* Ghost "SAC" watermark — bleeds off right edge */
+    .hero-watermark {
+      position: absolute;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(16rem, 42vw, 62rem);
+      color: rgba(255,255,255,0.028);
+      right: -8vw;
+      bottom: -6rem;
+      pointer-events: none;
+      user-select: none;
+      line-height: 0.85;
+      letter-spacing: -0.02em;
+      z-index: 0;
+      white-space: nowrap;
+    }
+
+    /* Racing stripe accents — desktop only, right side */
+    .hero-race {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 45%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-race::before,
+    .hero-race::after {
+      content: '';
+      position: absolute;
+      top: -60%;
+      bottom: -60%;
+      transform: rotate(-22deg);
+      transform-origin: center;
+    }
+    .hero-race::before {
+      right: 16%;
+      width: 2px;
+      background: linear-gradient(180deg,
+        transparent 0%, rgba(200,16,46,0) 18%,
+        rgba(200,16,46,0.45) 42%, rgba(200,16,46,0.55) 50%,
+        rgba(200,16,46,0.45) 58%, rgba(200,16,46,0) 82%, transparent 100%);
+    }
+    .hero-race::after {
+      right: 18.5%;
+      width: 1px;
+      background: linear-gradient(180deg,
+        transparent 0%, rgba(200,16,46,0) 18%,
+        rgba(200,16,46,0.2) 42%, rgba(200,16,46,0.25) 50%,
+        rgba(200,16,46,0.2) 58%, rgba(200,16,46,0) 82%, transparent 100%);
+    }
+    @media (max-width: 1023px) { .hero-race { display: none; } }
+
+    .hero .container {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* === WORDMARK ROW === */
+    .hero-top {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .hero-top { margin-bottom: 1.75rem; padding-bottom: 1.75rem; }
+    }
+
+    /* Second shimmer layer — white overlay sweep on top of the gradient text */
+    .hero-top::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        110deg,
+        transparent 0%,
+        transparent 30%,
+        rgba(255, 255, 255, 0.18) 48%,
+        rgba(255, 255, 255, 0.32) 50%,
+        rgba(255, 255, 255, 0.18) 52%,
+        transparent 70%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: chrome-sweep 5s cubic-bezier(0.4, 0, 0.6, 1) 1.4s infinite;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    /* Chrome wordmark — fills container width */
+    .hero-wordmark {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 12.5vw, 9.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      background: var(--sac-chrome);
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation:
+        wordmark-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) both,
+        chrome-sweep 5s cubic-bezier(0.4, 0, 0.6, 1) 1.4s infinite;
+      user-select: none;
+      display: block;
+    }
+
+    @keyframes wordmark-reveal {
+      0%   { opacity: 0; letter-spacing: 0.5em; filter: blur(6px); }
+      55%  { filter: blur(0); }
+      100% { opacity: 1; letter-spacing: -0.02em; }
+    }
+
+    @keyframes chrome-sweep {
+      0%, 100% { background-position: 200% center; }
+      50%       { background-position: -100% center; }
+    }
+
+    /* === BODY ROW — left content + right chrome stats === */
+    .hero-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .hero-body {
+        grid-template-columns: 1fr auto;
+        gap: 0;
+        align-items: center;
+      }
+    }
+
+    .hero-left { min-width: 0; }
+
+    /* Double-stripe accent */
+    .hero-stripe {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+    }
+    .hero-stripe-a {
+      display: block;
+      width: 44px;
+      height: 3px;
+      background: var(--sac-red);
+    }
+    .hero-stripe-b {
+      display: block;
+      width: 16px;
+      height: 3px;
+      background: var(--sac-red);
+      opacity: 0.45;
+    }
+
+    /* Stacked editorial H1 */
+    .hero-h1 {
+      margin: 0 0 1rem;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+    }
+    .h1-dim {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+      color: rgba(255,255,255,0.42);
+      display: block;
+    }
+    .h1-bold {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5.25rem);
+      color: #fff;
+      display: block;
+    }
+    .h1-med {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      color: rgba(255,255,255,0.7);
+      display: block;
+    }
+    .h1-tag {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: clamp(0.625rem, 1.5vw, 0.8125rem);
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .hero-subhead {
+      font-size: clamp(0.875rem, 1.3vw, 0.9375rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      min-width: 0;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .hero-trust-dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: var(--sac-red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* === STATS — mobile: 3-col strip / desktop: vertical chrome column === */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-stats {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+        padding-left: 4rem;
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.07);
+        text-align: left;
+      }
+    }
+
+    .hero-stat {
+      padding: 1.25rem 0.5rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-stat:last-child { border-right: none; }
+
+    @media (min-width: 1024px) {
+      .hero-stat {
+        padding: 1.625rem 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .hero-stat:first-child { padding-top: 0; }
+      .hero-stat:last-child  { border-bottom: none; padding-bottom: 0; }
+    }
+
+    .hero-stat-n {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 8vw, 4.5rem);
+      background: var(--sac-chrome);
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: chrome-sweep 5s cubic-bezier(0.4, 0, 0.6, 1) 0.8s infinite;
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+    @media (min-width: 1024px) {
+      .hero-stat-n { font-size: clamp(2.75rem, 3.5vw, 4.5rem); }
+    }
+
+    .hero-stat-l {
+      display: block;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ============================================================
+       THE PROMISE
+    ============================================================ */
+    .promise { background: var(--sac-base); text-align: center; }
+
+    .promise-inner {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+
+    .promise-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--sac-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .promise-body {
+      color: var(--sac-steel);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       SERVICES — Rotated Index
+    ============================================================ */
+    .services {
+      background: var(--sac-ink);
+      padding-block: 0;
+    }
+
+    .section-header { margin-bottom: 2.5rem; }
+
+    .services-c-wrap {
+      display: flex;
+      align-items: stretch;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding: 4rem 1rem 5rem;
+    }
+    @media (min-width: 768px)  { .services-c-wrap { padding-inline: 2rem; } }
+    @media (min-width: 1024px) { .services-c-wrap { padding-block: 5.5rem 6.5rem; } }
+
+    /* Vertical spine — desktop only */
+    .services-spine {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .services-spine {
+        display: flex;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        align-items: center;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.5625rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.14);
+        padding-right: 2.5rem;
+        margin-right: 3.5rem;
+        border-right: 1px solid rgba(255,255,255,0.06);
+        flex-shrink: 0;
+      }
+    }
+
+    .services-c-body { flex: 1; min-width: 0; }
+
+    .services-c-header {
+      margin-bottom: 2.5rem;
+    }
+    .services-c-header .section-label { color: var(--sac-red); }
+    .services-c-header h2 { color: #fff; }
+
+    .services-c-items { list-style: none; }
+
+    .srow-c {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-block: 1.5rem;
+      border-bottom: 1px solid rgba(200,16,46,0.28);
+      transition: border-color 220ms ease;
+    }
+    .services-c-items > li:first-child { border-top: 1px solid rgba(200,16,46,0.28); }
+
+    .srow-c:hover,
+    .srow-c:active { border-color: rgba(200,16,46,0.75); }
+
+    @media (min-width: 768px) { .srow-c { padding-block: 2rem; } }
+
+    .srow-c-num {
+      font-family: var(--font-display);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      color: var(--sac-red);
+      flex-shrink: 0;
+      width: 2rem;
+      padding-top: 0.3em;
+    }
+
+    .srow-c-content { flex: 1; min-width: 0; }
+
+    .srow-c-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.875rem, 5.5vw, 4rem);
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .srow-c-desc {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.55;
+    }
+
+    .services-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* ============================================================
+       REVIEWS — Chrome Plate Marquee
+    ============================================================ */
+    .stats-marquee-wrap {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .stats-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.5rem;
+      padding-block: 0.5rem;
+      animation: stats-scroll 36s linear infinite;
+    }
+    .stats-marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes stats-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .stats-marquee-set {
+      display: flex;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Bolted chrome review plate */
+    .chrome-plate {
+      flex-shrink: 0;
+      width: 285px;
+      height: 162px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0 1.5rem 0 1.625rem;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          rgba(255,255,255,0.04) 1px,
+          transparent 2px
+        ),
+        linear-gradient(
+          160deg,
+          #6a6a6a 0%,
+          #a4a4a4 12%,
+          #d6d6d6 28%,
+          #f0f0f0 44%,
+          #ffffff 50%,
+          #ececec 56%,
+          #cacaca 70%,
+          #9e9e9e 84%,
+          #6e6e6e 100%
+        ),
+        radial-gradient(circle 7px at 14px 14px,               #080808 0%, #282828 50%, #444 80%, #101010 100%),
+        radial-gradient(circle 7px at calc(100% - 14px) 14px,  #080808 0%, #282828 50%, #444 80%, #101010 100%),
+        radial-gradient(circle 7px at 14px calc(100% - 14px),  #080808 0%, #282828 50%, #444 80%, #101010 100%),
+        radial-gradient(circle 7px at calc(100% - 14px) calc(100% - 14px), #080808 0%, #282828 50%, #444 80%, #101010 100%);
+      border: 1px solid rgba(0,0,0,0.4);
+      box-shadow:
+        0 6px 20px rgba(0,0,0,0.55),
+        0 1px 4px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        inset 0 -1px 0 rgba(0,0,0,0.18);
+    }
+
+    .rplate-stars {
+      display: block;
+      color: #C8922A;
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .rplate-quote {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #1a1a1a;
+      line-height: 1.45;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .rplate-attr {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.5rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #555;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stats-marquee-track { animation: none; }
+    }
+
+    /* ============================================================
+       MEET SEAN
+    ============================================================ */
+    .meet-sean { background: var(--sac-surface); }
+
+    .meet-sean-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (min-width: 1024px) {
+      .meet-sean-inner {
+        grid-template-columns: 2fr 3fr;
+        gap: 4rem;
+        align-items: center;
+      }
+    }
+
+    .sean-photo-placeholder {
+      aspect-ratio: 4 / 5;
+      background: var(--sac-surface);
+      border: 1px solid var(--sac-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sac-steel);
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Chrome sweep on heading — reads differently on light background:
+       dark red → SAC red → silver flash → SAC red → dark red */
+    .meet-sean h2 {
+      background: var(--sac-chrome);
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: chrome-sweep 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Red vertical accent stripe on photo column */
+    .sean-photo-wrap {
+      border-left: 3px solid var(--sac-red);
+      padding-left: 1.5rem;
+    }
+
+    .sean-copy p {
+      color: var(--sac-steel);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .sean-copy p:last-of-type { margin-bottom: 0; }
+
+    .sean-micro-quote {
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--sac-steel);
+      border-left: 3px solid var(--sac-red);
+      padding-left: 1rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       REVIEWS
+    ============================================================ */
+    .reviews {
+      background: var(--sac-ink);
+      padding-block: 3.5rem 4rem;
+      overflow: hidden;
+    }
+
+    .reviews-header {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) { .reviews-header { padding-inline: 2rem; } }
+    .reviews-header .section-label { color: var(--sac-red); }
+    .reviews-header h2 { color: #fff; }
+
+    .reviews-cta-row {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1rem;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.38);
+    }
+    @media (min-width: 768px) { .reviews-cta-row { padding-inline: 2rem; } }
+    .reviews-cta-row a {
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 150ms ease, text-decoration-color 150ms ease;
+    }
+    .reviews-cta-row a:hover { color: #fff; text-decoration-color: rgba(255,255,255,0.3); }
+
+    /* ============================================================
+       HOW IT WORKS
+    ============================================================ */
+    .process { background: var(--sac-surface); }
+
+    .process-items { list-style: none; }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-block: 1.5rem;
+      border-bottom: 1px solid var(--sac-hairline);
+      transition: border-color 220ms ease;
+    }
+    .process-items > li:first-child { border-top: 1px solid var(--sac-hairline); }
+    .process-step:hover,
+    .process-step:active { border-color: rgba(200,16,46,0.45); }
+    @media (min-width: 768px) { .process-step { padding-block: 2rem; } }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      color: var(--sac-red);
+      flex-shrink: 0;
+      width: 2rem;
+      padding-top: 0.4em;
+    }
+
+    .step-content { flex: 1; min-width: 0; }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.875rem, 5.5vw, 3.5rem);
+      color: var(--sac-ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.9375rem;
+      color: var(--sac-steel);
+      line-height: 1.55;
+    }
+
+    .process-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--sac-hairline);
+    }
+
+    /* ============================================================
+       LOCATION & HOURS
+    ============================================================ */
+    .location { background: var(--sac-ink); }
+
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    @media (min-width: 1024px) {
+      .location-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+    }
+
+    .location-details h2 {
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .location-address {
+      font-style: normal;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.65;
+      margin-bottom: 0.375rem;
+    }
+
+    .location-landmark {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0.625rem;
+    }
+    .hours-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hours-table td {
+      padding: 0.625rem 0;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .hours-table td:first-child {
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+      width: 38%;
+    }
+    .hours-table tr.is-today td { color: var(--sac-red); font-weight: 700; }
+    .hours-table tr.is-today td:first-child { color: var(--sac-red); }
+
+    .hours-note {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.28);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      min-height: 44px;
+      transition: color 150ms ease;
+    }
+    .contact-link:hover { color: #fff; }
+
+    .map-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.625rem 1rem;
+      min-height: 44px;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .map-btn:hover {
+      border-color: var(--sac-red);
+      color: var(--sac-red);
+    }
+
+    .location-map {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+      line-height: 0;
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 300px;
+      display: block;
+      filter: grayscale(30%) contrast(1.05);
+    }
+    @media (min-width: 1024px) {
+      .location-map iframe { height: 500px; }
+    }
+
+    /* ============================================================
+       ESTIMATE FORM
+    ============================================================ */
+    .estimate { background: var(--sac-surface); }
+
+    .estimate-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .estimate-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+
+    .estimate-sidebar h2 { margin-bottom: 1rem; }
+
+    .estimate-lead {
+      color: var(--sac-steel);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .estimate-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 3.5vw, 2rem);
+      color: var(--sac-ink);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: color 150ms ease;
+      margin-bottom: 0.25rem;
+    }
+    .estimate-phone:hover { color: var(--sac-red); }
+    .estimate-phone-note {
+      font-size: 0.8125rem;
+      color: var(--sac-steel);
+      margin-bottom: 2rem;
+    }
+
+    .estimate-trust {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+    .estimate-trust li {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--sac-steel);
+      font-weight: 500;
+    }
+    .estimate-trust li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sac-red);
+      flex-shrink: 0;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--sac-ink);
+      margin-bottom: 0.375rem;
+    }
+    .form-label .req { color: var(--sac-red); margin-left: 2px; }
+    .form-label .opt {
+      color: var(--sac-steel);
+      font-weight: 400;
+      font-size: 0.8125rem;
+      margin-left: 4px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 1rem; /* ≥16px — prevents iOS auto-zoom */
+      color: var(--sac-ink);
+      background: #fff;
+      border: 1px solid var(--sac-hairline);
+      border-radius: 2px;
+      padding: 0.75rem 1rem;
+      min-height: 44px;
+      transition: border-color 150ms ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--sac-red);
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 96px;
+      line-height: 1.55;
+    }
+
+    /* File upload */
+    .file-drop-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1px dashed var(--sac-hairline);
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: border-color 150ms ease;
+      color: var(--sac-steel);
+      font-size: 0.9375rem;
+      min-height: 56px;
+      border-radius: 2px;
+    }
+    .file-drop-label:hover { border-color: var(--sac-red); }
+
+    #photos { display: none; }
+
+    .file-feedback {
+      font-size: 0.8125rem;
+      color: var(--sac-red);
+      font-weight: 600;
+      margin-top: 0.375rem;
+      min-height: 1.2em;
+    }
+
+    /* Submit */
+    .form-submit {
+      width: 100%;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 1rem;
+      margin-top: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .form-submit { width: auto; min-width: 200px; }
+    }
+
+    .form-note {
+      font-size: 0.8125rem;
+      color: var(--sac-steel);
+      margin-top: 0.875rem;
+      text-align: center;
+    }
+    @media (min-width: 640px) { .form-note { text-align: left; } }
+
+    .form-msg {
+      display: none;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border-radius: 2px;
+    }
+    .form-msg--success {
+      background: #edf7ed;
+      color: #2e6b31;
+      border: 1px solid #b4d9b6;
+    }
+    .form-msg--error {
+      background: #fdf0f0;
+      color: #a81f1f;
+      border: 1px solid #f0b4b4;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--sac-ink);
+      padding-block: 4rem 2.5rem;
+    }
+
+    .footer-top {
+      padding-bottom: 2.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-wordmark {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      background: var(--sac-chrome);
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: chrome-sweep 5s cubic-bezier(0.4,0,0.6,1) infinite;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    }
+
+    .footer-col-label {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.5625rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+    }
+
+    .footer-phone {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 1.875rem);
+      letter-spacing: -0.01em;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 0.625rem;
+      transition: color 150ms ease;
+    }
+    .footer-phone:hover { color: var(--sac-red); }
+
+    .footer-addr {
+      font-style: normal;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-nav a {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 150ms ease;
+      display: inline-block;
+      min-height: 36px;
+      line-height: 36px;
+    }
+    .footer-nav a:hover { color: #fff; }
+
+    .footer-social {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1rem;
+    }
+    .footer-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      color: rgba(255,255,255,0.55);
+      transition: color 150ms ease;
+    }
+    .footer-social a:hover { color: var(--sac-red); }
+
+    .footer-email {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 150ms ease;
+      word-break: break-all;
+    }
+    .footer-email:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ============================================================
+       STICKY CALL BUTTON — mobile only
+    ============================================================ */
+    .sticky-call {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--sac-red);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 100px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 300ms ease, background 150ms ease;
+      min-height: 52px;
+    }
+    .sticky-call.is-visible { opacity: 1; }
+    .sticky-call:hover,
+    .sticky-call:active { background: var(--sac-red-dark); }
+
+    @media (max-width: 767px) {
+      .sticky-call { display: flex; }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-wordmark { animation: none; }
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar" role="banner" aria-label="Site announcements">
+    <div class="announcement-track" aria-hidden="true">
+      <div class="announcement-set">
+        <span class="announcement-item announcement-item--chrome">Lifetime Guaranteed</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">&#9733; 5.0 Google Rating</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">37+ Verified Reviews</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item announcement-item--chrome">Any Insurance Welcome</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Owner-Operated Since 2017</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Call Sean Direct &mdash; (605) 348-3458</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Rapid City, SD</span>
+        <span class="announcement-dot"></span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="announcement-set">
+        <span class="announcement-item announcement-item--chrome">Lifetime Guaranteed</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">&#9733; 5.0 Google Rating</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">37+ Verified Reviews</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item announcement-item--chrome">Any Insurance Welcome</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Owner-Operated Since 2017</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Call Sean Direct &mdash; (605) 348-3458</span>
+        <span class="announcement-dot"></span>
+        <span class="announcement-item">Rapid City, SD</span>
+        <span class="announcement-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       STICKY NAV
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+
+      <a href="/" class="nav-logo" aria-label="SAC Auto Body — home">
+        <img
+          src="https://i.ibb.co/DHVL3G6Q/sac-auto-body-logo.png"
+          alt="SAC Auto Body"
+          width="120"
+          height="38"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <span class="nav-logo-text" style="display:none;" aria-hidden="true">SAC AUTO BODY</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#estimate" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <a href="tel:+16053483458" class="nav-phone" aria-label="Call SAC Auto Body at (605) 348-3458">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          (605) 348-3458
+        </a>
+        <button
+          class="nav-hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="nav-overlay"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div
+    class="nav-overlay"
+    id="nav-overlay"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+  >
+    <nav class="nav-overlay-links" aria-label="Mobile navigation">
+      <a href="#services" class="nav-overlay-link">Services</a>
+      <a href="#reviews" class="nav-overlay-link">Reviews</a>
+      <a href="#location" class="nav-overlay-link">Location</a>
+      <a href="#estimate" class="nav-overlay-link">Contact</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a href="tel:+16053483458" class="btn btn-primary" aria-label="Call SAC Auto Body">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        Call (605) 348-3458
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- 1. HERO -->
+    <section class="hero" aria-label="Introduction">
+      <!-- Background elements — intentionally outside container -->
+      <div class="hero-bg-orb" aria-hidden="true"></div>
+      <div class="hero-watermark" aria-hidden="true">SAC</div>
+      <div class="hero-race" aria-hidden="true"></div>
+
+      <div class="container">
+        <!-- WORDMARK ROW -->
+        <div class="hero-top">
+          <p class="hero-wordmark" aria-hidden="true">SAC AUTO BODY</p>
+        </div>
+
+        <!-- BODY ROW: left content + right chrome stats -->
+        <div class="hero-body">
+
+          <!-- Left column -->
+          <div class="hero-left">
+            <div class="hero-stripe" aria-hidden="true">
+              <span class="hero-stripe-a"></span>
+              <span class="hero-stripe-b"></span>
+            </div>
+            <h1 class="hero-h1">
+              <span class="h1-dim">Rapid City's</span>
+              <span class="h1-bold">Independent</span>
+              <span class="h1-med">Auto Body Shop.</span>
+              <span class="h1-tag">Owner-Operated &middot; Lifetime Guaranteed &middot; Since 2017</span>
+            </h1>
+            <p class="hero-subhead">Hail. Collision. Paint. Rust. RVs. Sean Reagan and his crew have been returning vehicles to pre-damage condition in Rapid City since 2017. Every repair guaranteed for as long as you own the vehicle.</p>
+            <div class="hero-ctas">
+              <a href="tel:+16053483458" class="btn btn-primary" aria-label="Call SAC Auto Body at (605) 348-3458">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                Call (605) 348-3458
+              </a>
+              <a href="#estimate" class="btn btn-ghost-light">Request an estimate &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Right column: chrome stats — desktop only -->
+          <aside class="hero-stats" aria-label="Shop highlights" aria-hidden="true">
+            <div class="hero-stat">
+              <span class="hero-stat-n">8+</span>
+              <span class="hero-stat-l">Years in Rapid City</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-n">5.0</span>
+              <span class="hero-stat-l">Google Rating</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-n">37+</span>
+              <span class="hero-stat-l">Verified Reviews</span>
+            </div>
+          </aside>
+
+        </div><!-- /.hero-body -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- 3. SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="services-c-wrap">
+        <div class="services-spine" aria-hidden="true">Services</div>
+        <div class="services-c-body">
+          <div class="services-c-header">
+            <span class="section-label">What we do</span>
+            <h2 id="services-heading">Services</h2>
+          </div>
+          <ul class="services-c-items" role="list">
+            <li class="srow-c" data-reveal style="--i:1">
+              <span class="srow-c-num" aria-hidden="true">01</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Hail Damage</p>
+                <p class="srow-c-desc">Paintless dent removal and conventional repair on all vehicle types.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:2">
+              <span class="srow-c-num" aria-hidden="true">02</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Collision Repair</p>
+                <p class="srow-c-desc">Fender benders to major impact, deer strikes, and structural damage.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:3">
+              <span class="srow-c-num" aria-hidden="true">03</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Paint Refinishing</p>
+                <p class="srow-c-desc">Factory-matched, manufacturer-spec paint. Correction and enhancement included.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:4">
+              <span class="srow-c-num" aria-hidden="true">04</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Auto Glass</p>
+                <p class="srow-c-desc">Windshield, back glass, and door glass replacement on all makes.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:5">
+              <span class="srow-c-num" aria-hidden="true">05</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Rust Repair</p>
+                <p class="srow-c-desc">Restoration-grade rust remediation and refinishing.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:6">
+              <span class="srow-c-num" aria-hidden="true">06</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">Frame Straightening</p>
+                <p class="srow-c-desc">Structural frame corrections to manufacturer specifications.</p>
+              </div>
+            </li>
+            <li class="srow-c" data-reveal style="--i:7">
+              <span class="srow-c-num" aria-hidden="true">07</span>
+              <div class="srow-c-content">
+                <p class="srow-c-name">RV Paint &amp; Body</p>
+                <p class="srow-c-desc">Paint and body work for RVs, trailers, and specialty vehicles.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="services-cta">
+            <a href="tel:+16053483458" class="btn btn-primary" aria-label="Call SAC Auto Body">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Call (605) 348-3458
+            </a>
+            <a href="#estimate" class="btn btn-ghost-light">Request an estimate &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="chrome-divider" aria-hidden="true">
+
+    <!-- 4. MEET SEAN -->
+    <section class="meet-sean" aria-labelledby="sean-heading">
+      <div class="container">
+        <div class="meet-sean-inner">
+          <div class="sean-photo-wrap" data-reveal style="--i:1">
+            <div
+              class="sean-photo-placeholder"
+              role="img"
+              aria-label="Photo of Sean Reagan and Pickles the shop dog — coming soon"
+            >
+              Photo of Sean + Pickles<br>&mdash; to be added &mdash;
+            </div>
+          </div>
+          <div class="sean-copy" data-reveal style="--i:2">
+            <h2 id="sean-heading">Meet Sean.</h2>
+            <p>Sean Reagan started SAC Auto Body in 2017 with the support of his wife Shannon, after more than a decade working at other reputable repair facilities in Rapid City. The shop runs on one principle: earn the customer&rsquo;s trust before starting the repair.</p>
+            <p>Sean and his crew work on every vehicle that comes through the shop. Sean returns your calls personally and walks you through every step. And yes &mdash; Pickles, the shop dog, will greet you at the door.</p>
+            <blockquote class="sean-micro-quote">
+              &ldquo;Pickles the dog is a reason in itself to stop by for an estimate.&rdquo; &mdash; Jeffrey Cutler, Google
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="chrome-divider" aria-hidden="true">
+
+    <!-- 5. REVIEWS -->
+    <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+      <div class="reviews-header">
+        <span class="section-label">What customers say</span>
+        <h2 id="reviews-heading">Verified reviews</h2>
+      </div>
+      <div class="stats-marquee-wrap">
+        <div class="stats-marquee-track" aria-hidden="true">
+          <div class="stats-marquee-set">
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Exactly how you'd HOPE shops are run."</p>
+              <span class="rplate-attr">John Mortensen &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Pickles alone is reason enough to stop by."</p>
+              <span class="rplate-attr">Jeffrey Cutler &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Super personable. They take pride in their work."</p>
+              <span class="rplate-attr">Anthony Ruby &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Takes all the insurance stress out."</p>
+              <span class="rplate-attr">Mitchell S. &middot; Google</span>
+            </div>
+          </div>
+          <div class="stats-marquee-set">
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Exactly how you'd HOPE shops are run."</p>
+              <span class="rplate-attr">John Mortensen &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Pickles alone is reason enough to stop by."</p>
+              <span class="rplate-attr">Jeffrey Cutler &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Super personable. They take pride in their work."</p>
+              <span class="rplate-attr">Anthony Ruby &middot; Google</span>
+            </div>
+            <div class="chrome-plate">
+              <span class="rplate-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <p class="rplate-quote">"Takes all the insurance stress out."</p>
+              <span class="rplate-attr">Mitchell S. &middot; Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="sr-only">Customer reviews: John Mortensen — exactly how you'd hope shops are run. Jeffrey Cutler — Pickles alone is reason enough to stop by. Anthony Ruby — super personable, they take pride in their work. Mitchell S. — takes all the insurance stress out.</p>
+      <p class="reviews-cta-row">
+        Read all 37 reviews on
+        <a href="https://www.google.com/search?q=SAC+Auto+Body+Rapid+City" target="_blank" rel="noopener noreferrer" aria-label="Read SAC Auto Body reviews on Google (opens in new tab)">Google</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.facebook.com/Sacautobody/" target="_blank" rel="noopener noreferrer" aria-label="Read SAC Auto Body reviews on Facebook (opens in new tab)">Facebook</a>
+      </p>
+    </section>
+
+    <hr class="chrome-divider" aria-hidden="true">
+
+    <!-- 7. HOW IT WORKS -->
+    <section class="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label">The process</span>
+          <h2 id="process-heading">How it works</h2>
+        </div>
+        <ol class="process-items">
+          <li class="process-step" data-reveal style="--i:1">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div class="step-content">
+              <h3 class="step-title">Call or Request</h3>
+              <p class="step-desc">Phone, email, or the form below. Sean responds within one business day.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal style="--i:2">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div class="step-content">
+              <h3 class="step-title">Estimate</h3>
+              <p class="step-desc">In-shop or from photos. Transparent pricing, no surprises.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal style="--i:3">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div class="step-content">
+              <h3 class="step-title">Repair</h3>
+              <p class="step-desc">We handle the insurance paperwork. Status updates every step.</p>
+            </div>
+          </li>
+          <li class="process-step" data-reveal style="--i:4">
+            <span class="step-num" aria-hidden="true">04</span>
+            <div class="step-content">
+              <h3 class="step-title">Return</h3>
+              <p class="step-desc">Vehicle returned fully detailed. Guaranteed for as long as you own it.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="process-cta" data-reveal style="--i:5">
+          <a href="#estimate" class="btn btn-primary">Request an estimate</a>
+          <a href="tel:+16053483458" class="btn btn-outline">Call (605) 348-3458</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="chrome-divider" aria-hidden="true">
+
+    <!-- 8. LOCATION & HOURS -->
+    <section class="location" id="location" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="location-inner">
+
+          <div class="location-details">
+            <h2 id="location-heading">Visit the shop.</h2>
+
+            <address class="location-address">
+              301 Cambell St, #3<br>
+              Rapid City, SD 57701
+            </address>
+            <p class="location-landmark">In the old Rice Honda building &mdash; south of Liberty Chrysler/Jeep, next to Black Hills Fireplace.</p>
+
+            <table class="hours-table" aria-label="Business hours">
+              <tbody>
+                <tr data-day="1"><td>Monday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="2"><td>Tuesday</td><td>8:00 &ndash; 11:30 AM &middot; 12:30 &ndash; 5:00 PM</td></tr>
+                <tr data-day="3"><td>Wednesday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="4"><td>Thursday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="5"><td>Friday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="6"><td>Saturday</td><td>Closed</td></tr>
+                <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+              </tbody>
+            </table>
+            <p class="hours-note">We close for lunch between shifts. Tuesday&rsquo;s lunch runs a half-hour earlier.</p>
+
+            <div class="contact-block">
+              <a href="tel:+16053483458" class="contact-link" aria-label="Call SAC Auto Body">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                (605) 348-3458
+              </a>
+              <a href="mailto:sacrapidcity@gmail.com" class="contact-link" aria-label="Email SAC Auto Body">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                sacrapidcity@gmail.com
+              </a>
+            </div>
+
+            <div class="map-btns">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=SAC+Auto+Body+301+Cambell+St+Rapid+City+SD+57701"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-btn"
+                aria-label="Open SAC Auto Body in Google Maps (opens in new tab)"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Google Maps
+              </a>
+              <a
+                href="https://waze.com/ul?q=301%20Cambell%20St%20Rapid%20City%20SD%2057701&navigate=yes"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-btn"
+                aria-label="Open SAC Auto Body in Waze (opens in new tab)"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Waze
+              </a>
+            </div>
+          </div>
+
+          <div class="location-map" data-reveal>
+            <iframe
+              src="https://maps.google.com/maps?q=301+Cambell+St+%233+Rapid+City+SD+57701&output=embed"
+              width="600"
+              height="500"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="SAC Auto Body location — 301 Cambell St, Rapid City, SD 57701"
+              aria-label="Map showing SAC Auto Body location at 301 Cambell St, Rapid City, SD"
+            ></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="chrome-divider" aria-hidden="true">
+
+    <!-- 9. ESTIMATE FORM -->
+    <section class="estimate" id="estimate" aria-labelledby="estimate-heading">
+      <div class="container">
+        <div class="estimate-layout">
+
+          <!-- Sidebar -->
+          <div class="estimate-sidebar" data-reveal>
+            <span class="section-label">Get started</span>
+            <h2 id="estimate-heading">Request an estimate.</h2>
+            <p class="estimate-lead">Send photos of the damage and Sean or his crew will get back to you within one business day with next steps.</p>
+            <a href="tel:+16053483458" class="estimate-phone" aria-label="Call SAC Auto Body at (605) 348-3458">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              (605) 348-3458
+            </a>
+            <p class="estimate-phone-note">Prefer to call? We pick up.</p>
+            <ul class="estimate-trust" aria-label="Why SAC Auto Body">
+              <li>Lifetime repair guarantee</li>
+              <li>Any insurance company accepted</li>
+              <li>Sean responds personally</li>
+            </ul>
+          </div>
+
+          <!-- Form -->
+          <div data-reveal style="--i:2">
+          <form id="estimate-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="New estimate request — SAC Auto Body">
+            <input type="hidden" name="from_name" value="SAC Auto Body website">
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true">
+
+            <div class="form-group">
+              <label class="form-label" for="f-name">
+                Your name <span class="req" aria-label="required">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="text"
+                id="f-name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="First and last name"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-phone">
+                Phone number <span class="req" aria-label="required">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="tel"
+                id="f-phone"
+                name="phone"
+                required
+                autocomplete="tel"
+                placeholder="(605) 000-0000"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-email">
+                Email <span class="opt">(Optional &mdash; we usually call first.)</span>
+              </label>
+              <input
+                class="form-input"
+                type="email"
+                id="f-email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-vehicle">
+                Vehicle year / make / model <span class="req" aria-label="required">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="text"
+                id="f-vehicle"
+                name="vehicle"
+                required
+                placeholder="2020 Chevy Suburban"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-damage">
+                Type of damage <span class="req" aria-label="required">*</span>
+              </label>
+              <select class="form-select" id="f-damage" name="damage_type" required>
+                <option value="" disabled selected>Select damage type</option>
+                <option value="Hail">Hail</option>
+                <option value="Collision">Collision</option>
+                <option value="Paint only">Paint only</option>
+                <option value="Rust">Rust</option>
+                <option value="Auto glass">Auto glass</option>
+                <option value="RV / specialty">RV / specialty</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-description">
+                Describe what happened <span class="req" aria-label="required">*</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="f-description"
+                name="description"
+                rows="3"
+                required
+                placeholder="Brief description of the damage and how it happened&#8230;"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="photos">Photos of the damage</label>
+              <label class="file-drop-label" for="photos">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="m21 15-5-5L5 21"/>
+                </svg>
+                <span id="file-label-text">Attach photos &mdash; up to 5 images</span>
+              </label>
+              <input type="file" id="photos" name="photos" accept="image/*" multiple>
+              <p class="file-feedback" id="file-feedback" aria-live="polite" aria-atomic="true"></p>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
+              Send Request
+            </button>
+            <p class="form-note">Your info goes straight to Sean. No spam, no third-party sharing.</p>
+
+            <div class="form-msg form-msg--success" id="form-success" role="alert">
+              Thanks &mdash; Sean will be in touch within one business day.
+            </div>
+            <div class="form-msg form-msg--error" id="form-error" role="alert">
+              Something went wrong. Please call us directly at <a href="tel:+16053483458">(605) 348-3458</a>.
+            </div>
+          </form>
+          </div><!-- /form wrapper -->
+
+        </div><!-- /estimate-layout -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <!-- Wordmark + tagline -->
+      <div class="footer-top">
+        <img
+          class="footer-logo"
+          src="https://i.ibb.co/nMk80Dh2/sac-auto-body-logo.png"
+          alt="SAC Auto Body"
+          width="160"
+          height="48"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
+        >
+        <p class="footer-wordmark" style="display:none;" aria-hidden="true">SAC AUTO BODY</p>
+        <p class="footer-tagline">Rapid City's independent body shop.</p>
+      </div>
+
+      <!-- 3-column grid -->
+      <div class="footer-grid">
+
+        <div>
+          <p class="footer-col-label">Contact</p>
+          <a href="tel:+16053483458" class="footer-phone">(605) 348-3458</a>
+          <address class="footer-addr">
+            301 Cambell St, #3<br>
+            Rapid City, SD 57701<br>
+            Mon&ndash;Fri &middot; Split lunch schedule
+          </address>
+        </div>
+
+        <div>
+          <p class="footer-col-label">Navigate</p>
+          <ul class="footer-nav" role="list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#meet-sean">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#location">Location &amp; Hours</a></li>
+            <li><a href="#estimate">Get an Estimate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-label">Follow</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/Sacautobody/" target="_blank" rel="noopener noreferrer" aria-label="SAC Auto Body on Facebook (opens in new tab)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/sacrapidcity/" target="_blank" rel="noopener noreferrer" aria-label="SAC Auto Body on Instagram (opens in new tab)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+          <a href="mailto:sacrapidcity@gmail.com" class="footer-email">sacrapidcity@gmail.com</a>
+        </div>
+
+      </div>
+
+      <p class="footer-bottom">&copy; 2026 SAC Auto Body LLC &middot; All rights reserved.</p>
+
+    </div>
+  </footer>
+
+  <!-- Sticky call button — mobile only -->
+  <a
+    href="tel:+16053483458"
+    class="sticky-call"
+    id="sticky-call"
+    aria-label="Call SAC Auto Body at (605) 348-3458"
+  >
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </svg>
+    Call Now
+  </a>
+
+  <!-- Schema.org LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoBodyShop",
+    "name": "SAC Auto Body",
+    "alternateName": "Sac Auto Body LLC",
+    "description": "Independent, owner-operated auto body and paint shop in Rapid City, SD. Specializing in hail, collision, paint, rust, auto glass, and RV repair. Lifetime-guaranteed repairs.",
+    "image": "https://[DOMAIN_TBD]/og-image.jpg",
+    "telephone": "+16053483458",
+    "email": "sacrapidcity@gmail.com",
+    "url": "https://[DOMAIN_TBD]/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "301 Cambell St, #3",
+      "addressLocality": "Rapid City",
+      "addressRegion": "SD",
+      "postalCode": "57701",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.0805,
+      "longitude": -103.2310
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday"],
+        "opens": "13:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "08:00",
+        "closes": "11:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "12:30",
+        "closes": "17:00"
+      }
+    ],
+    "priceRange": "$$",
+    "founder": {
+      "@type": "Person",
+      "name": "Sean Reagan"
+    },
+    "foundingDate": "2017-07-01",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "37"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Sacautobody/",
+      "https://www.instagram.com/sacrapidcity/"
+    ]
+  }
+  </script>
+
+  <script>
+    // ============================================================
+    // HERO — Mouse-reactive metallic sheen (--mx / --my)
+    // ============================================================
+    (function () {
+      var hero    = document.querySelector('.hero');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!hero || reduced) return;
+      document.addEventListener('mousemove', function (e) {
+        hero.style.setProperty('--mx', (e.clientX / window.innerWidth  * 100).toFixed(1) + '%');
+        hero.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
+      }, { passive: true });
+    }());
+
+    // ============================================================
+    // ANNOUNCEMENT BAR — measure height, write to CSS var
+    // ============================================================
+    (function () {
+      function setBarHeight() {
+        var bar = document.querySelector('.announcement-bar');
+        if (bar) {
+          document.documentElement.style.setProperty('--bar-height', bar.offsetHeight + 'px');
+        }
+      }
+      setBarHeight();
+      window.addEventListener('resize', setBarHeight, { passive: true });
+    }());
+
+    // ============================================================
+    // NAV — Hamburger + overlay
+    // ============================================================
+    (function () {
+      var hamburger = document.querySelector('.nav-hamburger');
+      var overlay   = document.getElementById('nav-overlay');
+      var closeEls  = overlay.querySelectorAll('.nav-overlay-link, .nav-overlay-cta a');
+      var savedY    = 0;
+
+      function openNav() {
+        savedY = window.scrollY;
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Close menu');
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.position = 'fixed';
+        document.body.style.top      = '-' + savedY + 'px';
+        document.body.style.width    = '100%';
+        // Move focus into overlay
+        var first = overlay.querySelector('.nav-overlay-link');
+        if (first) first.focus();
+      }
+
+      function closeNav() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open menu');
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.position = '';
+        document.body.style.top      = '';
+        document.body.style.width    = '';
+        window.scrollTo(0, savedY);
+      }
+
+      hamburger.addEventListener('click', function () {
+        hamburger.getAttribute('aria-expanded') === 'true' ? closeNav() : openNav();
+      });
+
+      closeEls.forEach(function (el) {
+        el.addEventListener('click', closeNav);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+          closeNav();
+          hamburger.focus();
+        }
+      });
+    }());
+
+    // ============================================================
+    // HIGHLIGHT TODAY'S HOURS ROW
+    // ============================================================
+    (function () {
+      var day = new Date().getDay(); // 0=Sun … 6=Sat
+      var row = document.querySelector('[data-day="' + day + '"]');
+      if (row) row.classList.add('is-today');
+    }());
+
+    // ============================================================
+    // SCROLL REVEALS
+    // ============================================================
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('[data-reveal]');
+
+      if (reduced) {
+        els.forEach(function (el) {
+          el.style.opacity   = '1';
+          el.style.transform = 'none';
+        });
+        return;
+      }
+
+      els.forEach(function (el) {
+        var styleAttr = el.getAttribute('style') || '';
+        var match = styleAttr.match(/--i:\s*(\d+)/);
+        var i     = match ? parseInt(match[1], 10) : 1;
+        var delay = (i - 1) * 65;
+
+        el.style.opacity    = '0';
+        el.style.transform  = 'translateY(12px)';
+        el.style.transition = 'opacity 0.6s ease-out ' + delay + 'ms, transform 0.6s ease-out ' + delay + 'ms';
+      });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.style.opacity   = '1';
+            e.target.style.transform = 'translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      els.forEach(function (el) { io.observe(el); });
+    }());
+
+    // ============================================================
+    // STICKY CALL BUTTON
+    // ============================================================
+    (function () {
+      var btn     = document.getElementById('sticky-call');
+      var ticking = false;
+
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        window.requestAnimationFrame(function () {
+          btn.classList.toggle('is-visible', window.scrollY > 200);
+          ticking = false;
+        });
+        ticking = true;
+      }, { passive: true });
+    }());
+
+    // ============================================================
+    // FILE UPLOAD — count feedback
+    // ============================================================
+    (function () {
+      var input    = document.getElementById('photos');
+      var feedback = document.getElementById('file-feedback');
+      var labelTxt = document.getElementById('file-label-text');
+
+      if (!input) return;
+
+      input.addEventListener('change', function () {
+        var count = input.files.length;
+        if (count === 0) {
+          feedback.textContent = '';
+          labelTxt.textContent = 'Attach photos \u2014 up to 5 images';
+        } else if (count > 5) {
+          feedback.textContent = 'Please select 5 or fewer photos (' + count + ' selected).';
+        } else {
+          feedback.textContent = '';
+          labelTxt.textContent = count + ' photo' + (count > 1 ? 's' : '') + ' selected';
+        }
+      });
+    }());
+
+    // ============================================================
+    // WEB3FORMS — async submit
+    // ============================================================
+    (function () {
+      var form       = document.getElementById('estimate-form');
+      var submitBtn  = document.getElementById('submit-btn');
+      var successMsg = document.getElementById('form-success');
+      var errorMsg   = document.getElementById('form-error');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Basic required-field check
+        var requiredFields = form.querySelectorAll('[required]');
+        var allFilled = true;
+        requiredFields.forEach(function (f) {
+          if (!f.value.trim()) {
+            if (allFilled) f.focus();
+            allFilled = false;
+          }
+        });
+        if (!allFilled) return;
+
+        // Loading state
+        var originalLabel = submitBtn.textContent;
+        submitBtn.textContent = 'Sending\u2026';
+        submitBtn.disabled    = true;
+        successMsg.style.display = 'none';
+        errorMsg.style.display   = 'none';
+
+        try {
+          var data = new FormData(form);
+          var res  = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: data
+          });
+          var json = await res.json();
+
+          if (json.success) {
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            form.reset();
+            document.getElementById('file-feedback').textContent = '';
+            document.getElementById('file-label-text').textContent = 'Attach photos \u2014 up to 5 images';
+          } else {
+            throw new Error('Web3Forms returned failure');
+          }
+        } catch (_) {
+          errorMsg.style.display = 'block';
+          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } finally {
+          submitBtn.textContent = originalLabel;
+          submitBtn.disabled    = false;
+        }
+      });
+    }());
+  </script>
+
+</body>
+</html>

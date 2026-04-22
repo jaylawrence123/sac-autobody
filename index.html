@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAC Auto Body — Independent Auto Body Shop in Rapid City, SD</title>
-  <meta name="description" content="Owner-operated auto body and paint shop in Rapid City, SD. Hail, collision, paint, rust, auto glass, and RV repair. Lifetime guaranteed. Call (605) 348-3458.">
+  <meta name="description" content="Owner-operated auto body and paint shop in Rapid City, SD. Hail, collision, paint, rust, auto glass, and protective coatings. Qualifying repairs guaranteed. Call (605) 348-3458.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://[DOMAIN_TBD]/">
 
@@ -13,15 +13,17 @@
   <meta property="og:title" content="SAC Auto Body — Rapid City's Independent Body Shop">
   <meta property="og:description" content="Owner-operated auto body and paint shop. Lifetime guaranteed repairs. Works with any insurance company.">
   <meta property="og:url" content="https://[DOMAIN_TBD]/">
-  <meta property="og:image" content="https://[DOMAIN_TBD]/og-image.jpg">
+  <meta property="og:image" content="https://i.ibb.co/LzDtbCzL/sac-open-graph-1200x630.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SAC Auto Body — Rapid City, SD">
   <meta name="twitter:description" content="Owner-operated auto body shop. Lifetime guaranteed repairs.">
+  <meta name="twitter:image" content="https://i.ibb.co/LzDtbCzL/sac-open-graph-1200x630.png">
 
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="40x40" href="https://i.ibb.co/SwNQm9X4/sac-favicon-40x40.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/tTyCCHHy/sac-favicon-180x180.png">
 
   <!-- Google Fonts — async load for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -226,11 +228,17 @@
       background: var(--sac-red);
       color: #fff;
       border-color: var(--sac-red);
+      box-shadow: 4px 4px 0 0 #0E0E0E;
+      transition: background 150ms ease, color 150ms ease,
+                  border-color 150ms ease, box-shadow 120ms ease,
+                  transform 120ms ease;
     }
     .btn-primary:hover,
     .btn-primary:active {
       background: var(--sac-red-dark);
       border-color: var(--sac-red-dark);
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 0 #0E0E0E;
     }
 
     /* Ghost — dark backgrounds */
@@ -333,7 +341,7 @@
     }
 
     .announcement-item--chrome {
-      color: #E8394F;
+      color: #FF2D47;
       font-weight: 700;
     }
 
@@ -341,7 +349,7 @@
       display: inline-block;
       width: 3px;
       height: 3px;
-      background: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.6);
       border-radius: 50%;
       flex-shrink: 0;
     }
@@ -444,9 +452,15 @@
       border-radius: 2px;
       min-height: 44px;
       white-space: nowrap;
-      transition: background 150ms ease;
+      box-shadow: 4px 4px 0 0 #0E0E0E;
+      transition: background 150ms ease, box-shadow 120ms ease, transform 120ms ease;
     }
-    .nav-phone:hover { background: var(--sac-red-dark); }
+    .nav-phone:hover,
+    .nav-phone:active {
+      background: var(--sac-red-dark);
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 0 #0E0E0E;
+    }
 
     /* Hamburger */
     .nav-hamburger {
@@ -525,6 +539,11 @@
       font-size: 1.0625rem;
       padding: 1rem;
       justify-content: center;
+      box-shadow: 4px 4px 0 0 rgba(255,255,255,0.18);
+    }
+    .nav-overlay-cta .btn-primary:hover,
+    .nav-overlay-cta .btn-primary:active {
+      box-shadow: 1px 1px 0 0 rgba(255,255,255,0.18);
     }
 
     /* ============================================================
@@ -552,37 +571,42 @@
       @media (min-width: 768px) { .hero { min-height: 100vh; } }
     }
 
-    /* Horizontal scanlines — industrial feel */
+    /* Business card diagonal stripe texture */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.025) 2px,
-        rgba(0,0,0,0.025) 3px
+        -52deg,
+        transparent       0px,
+        transparent       22px,
+        rgba(255,255,255,0.55) 22px,   /* white highlight band */
+        rgba(255,255,255,0.55) 31px,
+        transparent       31px,
+        transparent       54px,
+        rgba(0,0,0,0.032) 54px,        /* grey shadow line */
+        rgba(0,0,0,0.032) 56px,
+        rgba(0,0,0,0.016) 56px,
+        rgba(0,0,0,0.016) 57px,
+        transparent       57px,
+        transparent       84px,
+        rgba(255,255,255,0.42) 84px,   /* narrower highlight */
+        rgba(255,255,255,0.42) 91px,
+        transparent       91px,
+        transparent       116px,
+        rgba(0,0,0,0.036) 116px,       /* grey shadow pair */
+        rgba(0,0,0,0.036) 118px,
+        rgba(0,0,0,0.018) 118px,
+        rgba(0,0,0,0.018) 119px,
+        transparent       119px,
+        transparent       142px        /* repeat cycle = 142px */
       );
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Diagonal panel-line texture */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        -52deg,
-        transparent 0px,
-        transparent 72px,
-        rgba(0,0,0,0.028) 72px,
-        rgba(0,0,0,0.028) 73px
-      );
-      pointer-events: none;
-      z-index: 0;
-    }
+    /* Second overlay removed — stripe pattern is sufficient */
+    .hero::after { content: none; }
 
     /* Animated ambient light orb */
     .hero-bg-orb {
@@ -693,12 +717,12 @@
       display: block;
     }
 
-    /* Primer layer — visible before paint arrives */
+    /* Primer layer — grey before gun arrives */
     .wm-raw {
       color: #B0B0B0;
     }
 
-    /* Chrome paint layer — clip reveals left→right during spray */
+    /* Chrome paint layer — clip-path reveals left→right during spray */
     .wm-painted {
       position: absolute;
       inset: 0;
@@ -711,7 +735,7 @@
       clip-path: inset(0 100% 0 0);
     }
 
-    /* Chrome sweep kicks in after spray finishes */
+    /* Spray done — full reveal, chrome sweep resumes */
     .wm-painted.spray-done {
       clip-path: inset(0 0% 0 0);
       animation: chrome-sweep 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -741,33 +765,25 @@
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
     }
 
-    /* Mist — red radial glow at nozzle tip */
-    .spray-mist {
-      position: absolute;
-      /* nozzle is at the right edge after scaleX(-1) */
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: radial-gradient(circle,
-        rgba(232,57,79,0.55) 0%,
-        rgba(200,16,46,0.22) 45%,
-        transparent 70%
-      );
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .spray-mist.mist-on {
-      animation: mist-pulse 0.12s ease-in-out infinite alternate;
-      opacity: 1;
+    /* Mist — red glow via drop-shadow on the gun image itself.
+       Class removed = glow gone, instantly, no separate element to hide. */
+    .spray-rig.spraying .spray-gun-img {
+      filter:
+        drop-shadow(0 2px 8px rgba(0,0,0,0.18))
+        drop-shadow(14px 0 10px rgba(200,16,46,0.55))
+        drop-shadow(14px 0 20px rgba(200,16,46,0.25));
+      animation: mist-pulse 0.15s ease-in-out infinite alternate;
     }
 
     @keyframes mist-pulse {
-      from { transform: translateY(-50%) scale(0.82); opacity: 0.75; }
-      to   { transform: translateY(-50%) scale(1.12); opacity: 1; }
+      from { filter:
+        drop-shadow(0 2px 8px rgba(0,0,0,0.18))
+        drop-shadow(12px 0 8px rgba(200,16,46,0.45))
+        drop-shadow(12px 0 18px rgba(200,16,46,0.2)); }
+      to   { filter:
+        drop-shadow(0 2px 8px rgba(0,0,0,0.18))
+        drop-shadow(16px 0 12px rgba(200,16,46,0.65))
+        drop-shadow(16px 0 24px rgba(200,16,46,0.3)); }
     }
 
     /* === BODY ROW — left content + right chrome stats === */
@@ -999,29 +1015,34 @@
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.025) 2px,
-        rgba(0,0,0,0.025) 3px
-      );
-      pointer-events: none;
-      z-index: 0;
-    }
-    .services::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
         -52deg,
-        transparent 0px,
-        transparent 72px,
-        rgba(0,0,0,0.028) 72px,
-        rgba(0,0,0,0.028) 73px
+        transparent       0px,
+        transparent       22px,
+        rgba(255,255,255,0.55) 22px,
+        rgba(255,255,255,0.55) 31px,
+        transparent       31px,
+        transparent       54px,
+        rgba(0,0,0,0.032) 54px,
+        rgba(0,0,0,0.032) 56px,
+        rgba(0,0,0,0.016) 56px,
+        rgba(0,0,0,0.016) 57px,
+        transparent       57px,
+        transparent       84px,
+        rgba(255,255,255,0.42) 84px,
+        rgba(255,255,255,0.42) 91px,
+        transparent       91px,
+        transparent       116px,
+        rgba(0,0,0,0.036) 116px,
+        rgba(0,0,0,0.036) 118px,
+        rgba(0,0,0,0.018) 118px,
+        rgba(0,0,0,0.018) 119px,
+        transparent       119px,
+        transparent       142px
       );
       pointer-events: none;
       z-index: 0;
     }
+    .services::after { content: none; }
 
     .section-header { margin-bottom: 2.5rem; }
 
@@ -1181,29 +1202,34 @@
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.025) 2px,
-        rgba(0,0,0,0.025) 3px
-      );
-      pointer-events: none;
-      z-index: 0;
-    }
-    .meet-sean::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
         -52deg,
-        transparent 0px,
-        transparent 72px,
-        rgba(0,0,0,0.028) 72px,
-        rgba(0,0,0,0.028) 73px
+        transparent       0px,
+        transparent       22px,
+        rgba(255,255,255,0.55) 22px,
+        rgba(255,255,255,0.55) 31px,
+        transparent       31px,
+        transparent       54px,
+        rgba(0,0,0,0.032) 54px,
+        rgba(0,0,0,0.032) 56px,
+        rgba(0,0,0,0.016) 56px,
+        rgba(0,0,0,0.016) 57px,
+        transparent       57px,
+        transparent       84px,
+        rgba(255,255,255,0.42) 84px,
+        rgba(255,255,255,0.42) 91px,
+        transparent       91px,
+        transparent       116px,
+        rgba(0,0,0,0.036) 116px,
+        rgba(0,0,0,0.036) 118px,
+        rgba(0,0,0,0.018) 118px,
+        rgba(0,0,0,0.018) 119px,
+        transparent       119px,
+        transparent       142px
       );
       pointer-events: none;
       z-index: 0;
     }
+    .meet-sean::after { content: none; }
 
     .meet-sean-inner {
       display: grid;
@@ -1343,34 +1369,40 @@
       position: relative;
     }
     .process .container { position: relative; z-index: 2; }
+    .process .section-header { text-align: center; }
     .process::before {
       content: '';
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.025) 2px,
-        rgba(0,0,0,0.025) 3px
-      );
-      pointer-events: none;
-      z-index: 0;
-    }
-    .process::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
         -52deg,
-        transparent 0px,
-        transparent 72px,
-        rgba(0,0,0,0.028) 72px,
-        rgba(0,0,0,0.028) 73px
+        transparent       0px,
+        transparent       22px,
+        rgba(255,255,255,0.55) 22px,
+        rgba(255,255,255,0.55) 31px,
+        transparent       31px,
+        transparent       54px,
+        rgba(0,0,0,0.032) 54px,
+        rgba(0,0,0,0.032) 56px,
+        rgba(0,0,0,0.016) 56px,
+        rgba(0,0,0,0.016) 57px,
+        transparent       57px,
+        transparent       84px,
+        rgba(255,255,255,0.42) 84px,
+        rgba(255,255,255,0.42) 91px,
+        transparent       91px,
+        transparent       116px,
+        rgba(0,0,0,0.036) 116px,
+        rgba(0,0,0,0.036) 118px,
+        rgba(0,0,0,0.018) 118px,
+        rgba(0,0,0,0.018) 119px,
+        transparent       119px,
+        transparent       142px
       );
       pointer-events: none;
       z-index: 0;
     }
+    .process::after { content: none; }
 
     .process-items {
       list-style: none;
@@ -1381,16 +1413,18 @@
     }
     @media (min-width: 640px) {
       .process-items {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        max-width: 860px;
+        margin-inline: auto;
       }
-      /* Connecting line through circle centers */
+      /* Connecting line through circle centers — 3 equal cols, center of each = 1/6, 3/6, 5/6 */
       .process-items::before {
         content: '';
         position: absolute;
         top: 24px;
-        left: 12.5%;
-        right: 12.5%;
+        left: 16.67%;
+        right: 16.67%;
         height: 1px;
         background: linear-gradient(90deg, var(--sac-red), rgba(200,16,46,0.25));
         z-index: 0;
@@ -1631,29 +1665,34 @@
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.025) 2px,
-        rgba(0,0,0,0.025) 3px
-      );
-      pointer-events: none;
-      z-index: 0;
-    }
-    .estimate::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
         -52deg,
-        transparent 0px,
-        transparent 72px,
-        rgba(0,0,0,0.028) 72px,
-        rgba(0,0,0,0.028) 73px
+        transparent       0px,
+        transparent       22px,
+        rgba(255,255,255,0.55) 22px,
+        rgba(255,255,255,0.55) 31px,
+        transparent       31px,
+        transparent       54px,
+        rgba(0,0,0,0.032) 54px,
+        rgba(0,0,0,0.032) 56px,
+        rgba(0,0,0,0.016) 56px,
+        rgba(0,0,0,0.016) 57px,
+        transparent       57px,
+        transparent       84px,
+        rgba(255,255,255,0.42) 84px,
+        rgba(255,255,255,0.42) 91px,
+        transparent       91px,
+        transparent       116px,
+        rgba(0,0,0,0.036) 116px,
+        rgba(0,0,0,0.036) 118px,
+        rgba(0,0,0,0.018) 118px,
+        rgba(0,0,0,0.018) 119px,
+        transparent       119px,
+        transparent       142px
       );
       pointer-events: none;
       z-index: 0;
     }
+    .estimate::after { content: none; }
 
     .estimate-layout {
       display: grid;
@@ -2018,15 +2057,19 @@
       font-size: 0.9375rem;
       padding: 0.875rem 1.75rem;
       border-radius: 100px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: 4px 4px 0 0 #0E0E0E;
       white-space: nowrap;
       opacity: 0;
-      transition: opacity 300ms ease, background 150ms ease;
+      transition: opacity 300ms ease, background 150ms ease, box-shadow 120ms ease, transform 120ms ease;
       min-height: 52px;
     }
     .sticky-call.is-visible { opacity: 1; }
     .sticky-call:hover,
-    .sticky-call:active { background: var(--sac-red-dark); }
+    .sticky-call:active {
+      background: var(--sac-red-dark);
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 0 #0E0E0E;
+    }
 
     @media (max-width: 767px) {
       .sticky-call { display: flex; }
@@ -2061,7 +2104,7 @@
         <span class="announcement-dot"></span>
         <span class="announcement-item announcement-item--chrome">Any Insurance Welcome</span>
         <span class="announcement-dot"></span>
-        <span class="announcement-item">Owner-Operated Since 2017</span>
+        <span class="announcement-item">Owner-Operated Since 2015</span>
         <span class="announcement-dot"></span>
         <span class="announcement-item">Call Sean Direct &mdash; (605) 348-3458</span>
         <span class="announcement-dot"></span>
@@ -2078,7 +2121,7 @@
         <span class="announcement-dot"></span>
         <span class="announcement-item announcement-item--chrome">Any Insurance Welcome</span>
         <span class="announcement-dot"></span>
-        <span class="announcement-item">Owner-Operated Since 2017</span>
+        <span class="announcement-item">Owner-Operated Since 2015</span>
         <span class="announcement-dot"></span>
         <span class="announcement-item">Call Sean Direct &mdash; (605) 348-3458</span>
         <span class="announcement-dot"></span>
@@ -2180,7 +2223,6 @@
             <span class="wm-painted" id="wm-painted">SAC AUTO BODY</span>
             <!-- Spray gun rig — JS positions this -->
             <div class="spray-rig" id="spray-rig">
-              <div class="spray-mist" id="spray-mist"></div>
               <img class="spray-gun-img" src="https://i.ibb.co/rKH1LLTy/logo-sac-auto.png" alt="" id="spray-gun-img">
             </div>
           </div>
@@ -2202,10 +2244,10 @@
               <span class="h1-tag">
                 <span class="h1-tag-item">Owner-Operated</span>
                 <span class="h1-tag-item">Lifetime Guaranteed</span>
-                <span class="h1-tag-item">Since 2017</span>
+                <span class="h1-tag-item">Since 2015</span>
               </span>
             </h1>
-            <p class="hero-subhead">Hail. Collision. Paint. Rust. RVs. Sean Reagan and his crew have been returning vehicles to pre-damage condition in Rapid City since 2017. Every repair guaranteed for as long as you own the vehicle.</p>
+            <p class="hero-subhead">Hail. Collision. Paint. Rust. Sean Reagan and his crew have been returning vehicles to pre-damage condition in Rapid City since 2015. Qualifying repairs guaranteed for as long as you own the vehicle.</p>
             <div class="hero-ctas">
               <a href="tel:+16053483458" class="btn btn-primary" aria-label="Call SAC Auto Body at (605) 348-3458">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -2253,7 +2295,7 @@
               <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/>
             </svg>
             <h3 class="service-card-name">Hail Damage</h3>
-            <p class="service-card-desc">Paintless dent removal and conventional repair. We handle everything from a few dings to a full roof — and work directly with your insurance.</p>
+            <p class="service-card-desc">Paintless dent removal and conventional repair. We handle everything from a few dings to a full roof replacement — and work directly with your insurance.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:2">
@@ -2262,61 +2304,59 @@
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
             <h3 class="service-card-name">Collision Repair</h3>
-            <p class="service-card-desc">Fender benders to major impacts — deer strikes, rollovers, and structural damage. Restored to pre-accident condition, every time.</p>
+            <p class="service-card-desc">Fender benders to deer strikes and major impacts. Restored to pre-accident condition, every time.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:3">
             <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <!-- edit-3: paint / refinishing -->
-              <path d="M12 20h9"/>
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              <!-- droplet: paint -->
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
             </svg>
             <h3 class="service-card-name">Paint Refinishing</h3>
-            <p class="service-card-desc">Factory-matched color, manufacturer-spec prep, and full clear coat application. Correction and enhancement included — no shortcuts.</p>
+            <p class="service-card-desc">Factory-matched color, manufacturer-spec prep, and full clear coat application. No shortcuts.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:4">
             <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <!-- monitor: auto glass / windshield -->
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="17" x2="12" y2="21"/>
+              <!-- shield: protective coatings -->
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            <h3 class="service-card-name">Auto Glass</h3>
-            <p class="service-card-desc">Windshield, back glass, and door glass on all makes. OEM and OEM-equivalent glass. ADAS recalibration available after replacement.</p>
+            <h3 class="service-card-name">Paint Enhancement &amp; Protective Coatings</h3>
+            <p class="service-card-desc">Buffing, polishing, and paint touchups of small scratches and imperfections to full paint enhancements and ceramic coatings.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:5">
             <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <!-- tool / wrench: rust repair -->
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              <!-- glass pane + crack: auto glass -->
+              <rect x="2" y="3" width="20" height="18" rx="2"/>
+              <path d="M9 3 12 11 10 15 15 21"/>
             </svg>
-            <h3 class="service-card-name">Rust Repair</h3>
-            <p class="service-card-desc">Surface oxidation to full panel rot. We cut it out, weld in new metal, and refinish. No filler over rust — ever.</p>
+            <h3 class="service-card-name">Auto Glass</h3>
+            <p class="service-card-desc">Windshield, back glass, and door glass on all makes. ADAS (Advanced Driver Assistance Systems) calibration performed to manufacturer specifications and procedures.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:6">
             <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <!-- maximize-2: frame straightening / pulling to spec -->
-              <polyline points="15 3 21 3 21 9"/>
-              <polyline points="9 21 3 21 3 15"/>
-              <line x1="21" y1="3" x2="14" y2="10"/>
-              <line x1="3" y1="21" x2="10" y2="14"/>
+              <!-- layers: panel replacement -->
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
             </svg>
-            <h3 class="service-card-name">Frame Straightening</h3>
-            <p class="service-card-desc">Structural frame and unibody pulled to manufacturer spec on computer-measured equipment. Verified before any panel work starts.</p>
+            <h3 class="service-card-name">Rust Repair</h3>
+            <p class="service-card-desc">Full replacement of affected panels to best ensure a quality, long-lasting repair. No filler over rust — ever.</p>
           </li>
 
           <li class="service-card" data-reveal style="--i:7">
             <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <!-- truck: RV / large vehicle -->
-              <rect x="1" y="3" width="15" height="13"/>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-              <circle cx="5.5" cy="18.5" r="2.5"/>
-              <circle cx="18.5" cy="18.5" r="2.5"/>
+              <!-- car side profile: paint & body -->
+              <path d="M5 15H3V12L6 7H18L21 12V15H19"/>
+              <path d="M6 7 8 4H16L18 7"/>
+              <circle cx="7" cy="15" r="2"/>
+              <circle cx="17" cy="15" r="2"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
             </svg>
-            <h3 class="service-card-name">RV Paint &amp; Body</h3>
-            <p class="service-card-desc">Full paint and body work for motorhomes, travel trailers, and specialty vehicles. Gel coat, fiberglass, aluminum — same standard as any passenger vehicle.</p>
+            <h3 class="service-card-name">Paint &amp; Body</h3>
+            <p class="service-card-desc">Complete paint and body work for most passenger vehicles, pickup trucks, and classics. Have a custom &ldquo;outside-the-box&rdquo; project? Let us know!</p>
           </li>
 
         </ul>
@@ -2389,7 +2429,7 @@
           </div>
           <div class="sean-copy" data-reveal style="--i:2">
             <h2 id="sean-heading">Meet Sean.</h2>
-            <p>Sean Reagan started SAC Auto Body in 2017 with the support of his wife Shannon, after more than a decade working at other reputable repair facilities in Rapid City. The shop runs on one principle: earn the customer&rsquo;s trust before starting the repair.</p>
+            <p>Sean Reagan started SAC Auto Body in 2015 with the support of his wife Shannon, after more than a decade working at other reputable repair facilities in Rapid City. The shop runs on one principle: earn the customer&rsquo;s trust before starting the repair.</p>
             <p>Sean and his crew work on every vehicle that comes through the shop. Sean returns your calls personally and walks you through every step. And yes &mdash; Pickles, the shop dog, will greet you at the door.</p>
             <blockquote class="sean-micro-quote">
               &ldquo;Pickles the dog is a reason in itself to stop by for an estimate.&rdquo; &mdash; Jeffrey Cutler, Google
@@ -2412,29 +2452,22 @@
           <li class="process-step">
             <span class="step-num" aria-hidden="true">01</span>
             <div class="step-content">
-              <h3 class="step-title">Call or Request</h3>
-              <p class="step-desc">Phone, email, or the form below. Sean responds within one business day.</p>
+              <h3 class="step-title">Request an Estimate</h3>
+              <p class="step-desc">In-person damage inspection is best for an estimate that is as thorough as possible. Alternatively, send vehicle VIN and damage photos. Sean or his crew will get back to you with next steps.</p>
             </div>
           </li>
           <li class="process-step">
             <span class="step-num" aria-hidden="true">02</span>
-            <div class="step-content">
-              <h3 class="step-title">Estimate</h3>
-              <p class="step-desc">In-shop or from photos. Transparent pricing, no surprises.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-num" aria-hidden="true">03</span>
             <div class="step-content">
               <h3 class="step-title">Repair</h3>
               <p class="step-desc">We handle the insurance paperwork. Status updates every step.</p>
             </div>
           </li>
           <li class="process-step">
-            <span class="step-num" aria-hidden="true">04</span>
+            <span class="step-num" aria-hidden="true">03</span>
             <div class="step-content">
               <h3 class="step-title">Return</h3>
-              <p class="step-desc">Vehicle returned fully detailed. Guaranteed for as long as you own it.</p>
+              <p class="step-desc">Vehicle returned pre-damage condition, clean and free of bodyshop debris. Guaranteed for as long as you own your vehicle.</p>
             </div>
           </li>
         </ol>
@@ -2463,16 +2496,16 @@
 
             <table class="hours-table" aria-label="Business hours">
               <tbody>
-                <tr data-day="1"><td>Monday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
-                <tr data-day="2"><td>Tuesday</td><td>8:00 &ndash; 11:30 AM &middot; 12:30 &ndash; 5:00 PM</td></tr>
-                <tr data-day="3"><td>Wednesday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
-                <tr data-day="4"><td>Thursday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
-                <tr data-day="5"><td>Friday</td><td>8:00 AM &ndash; 12:00 PM &middot; 1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="1"><td>Monday</td><td>8:00 AM &ndash; 12:00 PM<br>1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="2"><td>Tuesday</td><td>8:00 AM &ndash; 12:00 PM<br>1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="3"><td>Wednesday</td><td>8:00 AM &ndash; 12:00 PM<br>1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="4"><td>Thursday</td><td>8:00 AM &ndash; 12:00 PM<br>1:00 &ndash; 5:00 PM</td></tr>
+                <tr data-day="5"><td>Friday</td><td>8:00 AM &ndash; 12:00 PM<br>1:00 &ndash; 5:00 PM</td></tr>
                 <tr data-day="6"><td>Saturday</td><td>Closed</td></tr>
                 <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
               </tbody>
             </table>
-            <p class="hours-note">We close for lunch between shifts. Tuesday&rsquo;s lunch runs a half-hour earlier.</p>
+            <p class="hours-note">We close for lunch between shifts.</p>
 
             <div class="contact-block">
               <a href="tel:+16053483458" class="contact-link" aria-label="Call SAC Auto Body">
@@ -2520,9 +2553,9 @@
 
           <div class="location-map" data-reveal>
             <iframe
-              src="https://maps.google.com/maps?q=301+Cambell+St+%233+Rapid+City+SD+57701&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866.1476279225762!2d-103.1952725238006!3d44.080306771085176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x877d42114b71e11f%3A0x1ca4211d92b85d83!2sSAC%20Auto%20Body!5e0!3m2!1sen!2sus!4v1776833270801!5m2!1sen!2sus"
               width="600"
-              height="500"
+              height="450"
               style="border:0;"
               allowfullscreen=""
               loading="lazy"
@@ -2556,7 +2589,7 @@
             </a>
             <p class="estimate-phone-note">Prefer to call? We pick up.</p>
             <ul class="estimate-trust" aria-label="Why SAC Auto Body">
-              <li>Lifetime repair guarantee</li>
+              <li>Qualifying repairs guaranteed for as long as you own the vehicle</li>
               <li>Any insurance company accepted</li>
               <li>Sean responds personally</li>
             </ul>
@@ -2602,7 +2635,7 @@
 
             <div class="form-group">
               <label class="form-label" for="f-email">
-                Email <span class="opt">(Optional &mdash; we usually call first.)</span>
+                Email
               </label>
               <input
                 class="form-input"
@@ -2639,7 +2672,6 @@
                 <option value="Paint only">Paint only</option>
                 <option value="Rust">Rust</option>
                 <option value="Auto glass">Auto glass</option>
-                <option value="RV / specialty">RV / specialty</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -2783,7 +2815,7 @@
     "@type": "AutoBodyShop",
     "name": "SAC Auto Body",
     "alternateName": "Sac Auto Body LLC",
-    "description": "Independent, owner-operated auto body and paint shop in Rapid City, SD. Specializing in hail, collision, paint, rust, auto glass, and RV repair. Lifetime-guaranteed repairs.",
+    "description": "Independent, owner-operated auto body and paint shop in Rapid City, SD. Specializing in hail, collision, paint, rust, auto glass, and protective coatings. Qualifying repairs guaranteed for as long as you own the vehicle.",
     "image": "https://[DOMAIN_TBD]/og-image.jpg",
     "telephone": "+16053483458",
     "email": "sacrapidcity@gmail.com",
@@ -3081,20 +3113,17 @@
       var wrap    = document.querySelector('.wordmark-wrap');
       var painted = document.getElementById('wm-painted');
       var rig     = document.getElementById('spray-rig');
-      var mist    = document.getElementById('spray-mist');
       var gunImg  = document.getElementById('spray-gun-img');
 
       if (!wrap || !painted || !rig || !gunImg) return;
 
-      var DURATION   = 1600;   // ms to cross the full wordmark
-      var DELAY      = 500;    // ms after page load before gun fires
-      // Nozzle sits at ~12% from the RIGHT of the gun image
-      // (after scaleX(-1) flip, the original right edge = visual left, original left = nozzle on right)
-      var NOZZLE_R   = 0.12;   // nozzle is ~12% from right side of rendered image
+      var DURATION = 2600;  // ms for gun to cross the wordmark
+      var DELAY    = 500;   // ms after page load before gun fires
+      // Nozzle is ~12% from the right edge of the rendered gun image
+      var NOZZLE_R = 0.12;
 
-      // Ease: ease-in-out sine
       function ease(t) {
-        return -(Math.cos(Math.PI * t) - 1) / 2;
+        return -(Math.cos(Math.PI * t) - 1) / 2; // ease-in-out sine
       }
 
       var startTs = null;
@@ -3103,36 +3132,37 @@
       function frame(ts) {
         if (!startTs) {
           startTs = ts;
-          // Capture gun width now that image should be loaded
           gunW = gunImg.offsetWidth || 140;
         }
 
-        var elapsed  = ts - startTs;
-        var progress = Math.min(elapsed / DURATION, 1);
-        var eased    = ease(progress);
-
-        // Reveal the chrome paint left→right
-        var rightPct = (1 - eased) * 100;
-        painted.style.clipPath = 'inset(0 ' + rightPct.toFixed(3) + '% 0 0)';
-
-        // Keep nozzle aligned with the paint edge
+        var elapsed = ts - startTs;
         var wrapW   = wrap.offsetWidth;
-        var edgeX   = wrapW * eased;                       // px from left where paint ends
-        var nozzleX = gunW * NOZZLE_R;                    // nozzle offset from right of gun
-        var rigLeft = edgeX - gunW + nozzleX;              // position rig so nozzle lands on edge
-        rig.style.left = rigLeft.toFixed(1) + 'px';
+        var t       = Math.min(elapsed / DURATION, 1);
+        var eased   = ease(t);
 
-        if (progress < 1) {
+        painted.style.clipPath = 'inset(0 ' + ((1 - eased) * 100).toFixed(3) + '% 0 0)';
+        rig.style.left = (wrapW * eased - gunW + gunW * NOZZLE_R).toFixed(1) + 'px';
+
+        if (t < 1) {
           requestAnimationFrame(frame);
         } else {
-          // Spray done — hide rig, hand chrome sweep to the painted layer
-          rig.style.display = 'none';
+          // === Spray done: remove mist class instantly, slide gun off-screen ===
+          rig.classList.remove('spraying');
+          painted.style.clipPath = 'inset(0 0% 0 0)';
           painted.classList.add('spray-done');
+
+          // CSS transition exit — one rAF delay so browser registers the transition
+          rig.style.transition = 'left 0.45s ease-in';
+          requestAnimationFrame(function () {
+            var exitX = window.innerWidth - wrap.getBoundingClientRect().left + gunW;
+            rig.style.left = exitX.toFixed(0) + 'px';
+            setTimeout(function () { rig.style.display = 'none'; }, 500);
+          });
         }
       }
 
       function startSpray() {
-        mist.classList.add('mist-on');
+        rig.classList.add('spraying');
         requestAnimationFrame(frame);
       }
 
